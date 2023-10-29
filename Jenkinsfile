@@ -23,8 +23,16 @@ pipeline {
         sh 'cat trufflehog'
       }
     }
+        stage ('SAST') {
+      steps {
+        withSonarQubeEnv('sonar') {
+          sh 'mvn sonar:sonar'
+          sh 'cat target/sonar/report-task.txt'
+        }
+      }
+    } 
     
-       stage ('Source Composition Analysis') {
+       stage ('Source-Composition-Analysis') {
       steps {
          sh 'rm owasp* || true'
          sh 'wget "https://raw.githubusercontent.com/brunokaique/SAST-Android/master/owasp-dependency-check.sh" '
@@ -35,14 +43,7 @@ pipeline {
       }
     }
     
-    stage ('SAST') {
-      steps {
-        withSonarQubeEnv('sonar') {
-          sh 'mvn sonar:sonar'
-          sh 'cat target/sonar/report-task.txt'
-        }
-      }
-    }  
+ 
      
     }
  }
