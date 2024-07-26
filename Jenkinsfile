@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test'){
             steps {
-                sh 'echo "good"'
+                sh 'echo "good bye"'
             }
         }
         stage('Deploy') {
