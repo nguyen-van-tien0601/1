@@ -8,13 +8,3 @@ Feel free to reuse the code or any challenges; also open to any contributions in
 
 ## Screenshots
 <img src="https://i.imgur.com/DKlaG0j.png" width=35% height=35%><img src="https://i.imgur.com/pQ44v2q.png" width=35% height=35%><img src="https://i.imgur.com/aHJsOqA.png" width=35% height=35%>
-
-## Tools required
-* Android Emulator/Device (With root access)
-* Android ADB
-* Jadx
-* Drozer
-* Frida
-* Objection
-* Google
-* A brain
