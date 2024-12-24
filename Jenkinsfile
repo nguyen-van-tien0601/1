@@ -41,6 +41,19 @@ pipeline {
                 // Các bước build sẽ ở đây
             }
         }
+        stage('SAST') {
+            steps {
+                sh "semgrep ci"
+                // Các bước build sẽ ở đây
+            }
+        }
+        stage('SCA') {
+            steps {
+                sh "trivy fs --skip-db-update --offline-scan -f cyclonedx -o trivy_report.json ."
+                // Các bước build sẽ ở đây
+            }
+        }
+        
 
         // Các stage khác...
     }
